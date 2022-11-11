@@ -44,7 +44,7 @@ def download_dataset_md17(datadir, dataname, subset, splits=None, cleanup=True):
     md17_data_url = md17_base_url + md17_molecule + '.npz'
     md17_data_npz = join(md17dir, md17_molecule + '.npz')
 
-    # download_data(md17_data_url, outfile=md17_data_npz, binary=True)
+    download_data(md17_data_url, outfile=md17_data_npz, binary=True)
 
     # Convert raw MD17 data to torch tensors.
     md17_raw_data = np.load(md17_data_npz)

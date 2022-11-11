@@ -33,7 +33,7 @@ def download_dataset_qm9(datadir, dataname, splits=None, calculate_thermo=True, 
     # gdb9_tar_data =
     # tardata = tarfile.open(gdb9_tar_file, 'r')
     # files = tardata.getmembers()
-    # urllib.request.urlretrieve(gdb9_url_data, filename=gdb9_tar_data)
+    urllib.request.urlretrieve(gdb9_url_data, filename=gdb9_tar_data)
     logging.info('GDB9 dataset downloaded successfully!')
 
     # If splits are not specified, automatically generate them.

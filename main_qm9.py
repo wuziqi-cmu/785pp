@@ -7,6 +7,7 @@ from qm9 import utils as qm9_utils
 import utils
 import json
 import time
+import numpy as np
 
 from matplotlib import pyplot as plt
 import matplotlib
@@ -181,6 +182,14 @@ if __name__ == "__main__":
     te = time.time() - ts
     print(te)
 
+    pltData = np.zeros((3, len(trainLoss)))
+    pltData[0] = res['epochs']
+    pltData[1] = trainLoss
+    pltData[2] = valLoss
+    np.save("pltData.npy", pltData)
+
     plt.figure()
+    plt.yscale("log")
     plt.plot(res['epochs'], trainLoss, valLoss)
     plt.savefig("plt.png")
+
